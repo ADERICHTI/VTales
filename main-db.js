@@ -3,7 +3,7 @@ const stories = {
   "Lima's Door": {
     logline: LimaLogline,
     genre: "Fantasy",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRWSEV935tWYUBTk3y5SyPfzmIXBtQ82T8BoAHwKnDtdDuDoqAtLbRARcj&s=10",
+    imageUrl: "https://raw.githubusercontent.com/ADERICHTI/Images001/bb69c5b6ab3160e243a75b0aab9a20cf4ec628d1/Screenshot_20250817_180812.png",
     chapters: [
       {
         number: 1,
