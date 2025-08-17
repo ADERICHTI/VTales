@@ -1,10 +1,9 @@
-
 // Stories Database
 const stories = {
   "Lima's Door": {
     logline: LimaLogline,
     genre: "Fantasy",
-    imageUrl: "https://i.imgur.com/JQlEs9O.png",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRWSEV935tWYUBTk3y5SyPfzmIXBtQ82T8BoAHwKnDtdDuDoqAtLbRARcj&s=10",
     chapters: [
       {
         number: 1,
@@ -21,7 +20,7 @@ const stories = {
   "The Rat Taker": {
     logline: TheRatTakerLogline,
     genre: "Dark Fantasy",
-    imageUrl: "https://i.imgur.com/7VyvX3J.jpg",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmL7SGQxxgJaRtnUF0ucA5t9yIVXiXgS_iGADp5eCdMmSy8dXnbkLNF-U&s=10",
     chapters: [
       {
         number: 1,
