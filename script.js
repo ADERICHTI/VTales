@@ -226,6 +226,18 @@ function setupEventListeners() {
       likeButton.innerHTML = '<i class="fas fa-heart"></i>';
     }
   });
+
+  // Chapter header scroll effect
+window.addEventListener('scroll', () => {
+  const chapterHeader = document.querySelector('.chapter-header');
+  if (chapterHeader) {
+    if (window.scrollY > 50) {
+      chapterHeader.classList.add('compact');
+    } else {
+      chapterHeader.classList.remove('compact');
+    }
+  }
+});
   
   // Scroll to top button
   scrollTopBtn.addEventListener('click', () => {
