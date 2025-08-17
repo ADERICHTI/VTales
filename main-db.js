@@ -20,7 +20,7 @@ const stories = {
   "The Rat Taker": {
     logline: TheRatTakerLogline,
     genre: "Dark Fantasy",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmL7SGQxxgJaRtnUF0ucA5t9yIVXiXgS_iGADp5eCdMmSy8dXnbkLNF-U&s=10",
+    imageUrl: "https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Screenshot_20250817_182006.png",
     chapters: [
       {
         number: 1,
