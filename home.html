@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VTales | Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Unna:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="paper-layer">
+    <div class="header-content">
+      <h1 class="logo">VTales</h1>
+      <nav>
+        <ul>
+          <li><a href="#" class="active" data-section="home">Home</a></li>
+          <li><a href="#" data-section="about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="content-area">
+    <!-- Home Section (default) -->
+    <section id="home-section" class="active-section">
+      <!-- Hero Section -->
+      <section class="hero paper-layer">
+        <div class="hero-content">
+          <h1><span class="ink-stroke">Discover</span> captivating stories, <span class="ink-stroke">one</span> chapter at a time</h1>
+          <p class="hero-description">
+            Immerse yourself in worlds of adventure, romance, and fantasy crafted out of the Richard-Series
+          </p>
+        </div>
+        <div class="hero-background" id="hero-background"></div>
+      </section>
+
+      <!-- All Stories Section -->
+      <section class="stories-section">
+        <h2 class="section-title">Featured Stories</h2>
+        <div class="story-cards" id="story-cards">
+          <!-- Story cards will be dynamically inserted here -->
+        </div>
+      </section>
+    </section>
+
+    <!-- Story Section (hidden by default) -->
+    <section id="story-section" class="hidden-section">
+      <div class="story-header">
+        <h2 class="story-title" id="story-view-title">Story Title</h2>
+        <button class="back-btn"><i class="fas fa-arrow-left"></i> Back to Stories</button>
+      </div>
+      
+      <div class="latest-chapter-container">
+        <div class="latest-chapter paper-layer">
+          <h3>Latest Chapter</h3>
+          <div class="chapter-info" id="latest-chapter-info">
+            <!-- Latest chapter info will be inserted here -->
+          </div>
+        </div>
+      </div>
+      
+      <div class="chapters-container">
+        <h3 class="chapters-title">All Chapters</h3>
+        <div class="chapter-cards" id="chapter-cards">
+          <!-- Chapter cards will be dynamically inserted here -->
+        </div>
+      </div>
+      
+      <div class="like-btn-container">
+        <button class="like-btn" id="story-like-btn">
+          <i class="fas fa-heart"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Chapter Section (hidden by default) -->
+    <section id="chapter-section" class="hidden-section">
+      <div class="chapter-header">
+        <h2 class="chapter-title" id="chapter-view-title">Chapter Title</h2>
+        <button class="back-btn"><i class="fas fa-arrow-left"></i> Back to Story</button>
+      </div>
+      
+      <div class="chapter-content paper-layer" id="chapter-content">
+        <!-- Chapter content will be inserted here -->
+      </div>
+      
+      <div class="chapter-navigation">
+        <button class="nav-btn" id="prev-chapter-btn" disabled>
+          <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button class="nav-btn" id="next-chapter-btn" disabled>
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      
+      <button class="scroll-top-btn" id="scroll-top-btn">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+      
+      <button class="scroll-bottom-btn" id="scroll-bottom-btn">
+        <i class="fas fa-arrow-down"></i>
+      </button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="paper-layer" id="footer">
+    <p>IAR productions@VTales 2025</p>
+  </footer>
+
+  <!-- Contact Dialog (hidden by default) -->
+  <div class="dialog-overlay" id="dialog-overlay">
+    <div class="dialog paper-layer">
+      <h3>Contact the Author</h3>
+      <p>Have questions or feedback? Reach out to the author directly!</p>
+      <div class="contact-options">
+        <a href="https://wa.me/2348135682653" class="contact-btn whatsapp-btn">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="mailto:example@example.com" class="contact-btn email-btn">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
+      <button class="close-dialog-btn" id="close-dialog-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Story Database -->
+  <script src="story-db.js"></script>
+  <script src="main-db.js"></script>
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
