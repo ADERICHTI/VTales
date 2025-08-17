@@ -702,6 +702,61 @@ footer {
   }
 }
 
+/* === CHAPTER HEADER STYLES === */
+.chapter-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--paper);
+  padding: 0.5rem 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 60px;
+  overflow: hidden;
+}
+
+.chapter-header.compact {
+  height: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-header.compact .chapter-title {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.chapter-title {
+  font-size: 2rem;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: rgba(139, 90, 43, 0.1);
+}
+
 @media (max-width: 480px) {
   .header-content {
     flex-direction: column;
