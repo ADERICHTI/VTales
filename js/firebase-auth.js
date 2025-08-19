@@ -6,7 +6,7 @@ import {
   onAuthStateChanged,
   signOut 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,7 +24,6 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
   // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = firebaseConfig.measurementId ? getAnalytics(app) : null;
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
