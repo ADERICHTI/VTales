@@ -67,6 +67,24 @@ function showStory(storyTitle) {
   // Update the story view title
   storyViewTitle.textContent = storyTitle;
   
+  // Add logline with expand/collapse functionality
+  const loglineText = document.querySelector('.logline-text');
+  const loglineToggle = document.querySelector('.logline-toggle');
+  
+  loglineText.textContent = currentStory.logline;
+  loglineText.classList.add('collapsed');
+  loglineToggle.textContent = 'Read More';
+  
+  loglineToggle.addEventListener('click', () => {
+    if (loglineText.classList.contains('collapsed')) {
+      loglineText.classList.remove('collapsed');
+      loglineToggle.textContent = 'Read Less';
+    } else {
+      loglineText.classList.add('collapsed');
+      loglineToggle.textContent = 'Read More';
+    }
+  });  
+  
   // Render the latest chapter
   if (currentStory.chapters.length > 0) {
     const latestChapter = currentStory.chapters[currentStory.chapters.length - 1];
