@@ -1,6 +1,6 @@
 # Firebase configuration
 /firebase-config.js
-/firebase-auth.js
+firebase-auth.js
 firebase-config.json
 .env
 .DS_Store
