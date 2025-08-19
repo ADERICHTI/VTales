@@ -24,7 +24,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
   // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const analytics = firebaseConfig.measurementId ? getAnalytics(app) : null;
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
@@ -339,4 +339,4 @@ function showAuthModalAfterDelay() {
 }
 
 // Make auth available globally if needed
-window.firebaseAuth = { auth };
+//window.firebaseAuth = { auth };
