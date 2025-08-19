@@ -66,6 +66,10 @@ function renderStoryCards() {
 // Show a specific story with all its chapters
 function showStory(storyTitle) {
   currentStory = stories[storyTitle];
+  currentStoryId = storyTitle.toLowerCase().replace(/\s+/g, '-');
+  
+  // Check if user already liked this story
+  checkIfLiked(currentStoryId);
   
   // Update the story view title
   storyViewTitle.textContent = storyTitle;
@@ -87,6 +91,25 @@ function showStory(storyTitle) {
       loglineToggle.textContent = 'Read More';
     }
   });  
+
+  async function checkIfLiked(storyId) {
+  if (!currentUser) return;
+  
+  const userRef = doc(db, "users", currentUser.uid);
+  const userDoc = await getDoc(userRef);
+  
+  if (userDoc.exists()) {
+    const userData = userDoc.data();
+    const isLiked = userData.likedStories?.includes(storyId);
+    
+    if (isLiked) {
+      likeButton.classList.add('liked');
+      likeButton.innerHTML = '<i class="fas fa-heart"></i> Liked!';
+    }
+  }
+  }
+
+  // --+----------_--------66666------
   
   // Render the latest chapter
   if (currentStory.chapters.length > 0) {
@@ -239,14 +262,69 @@ function setupEventListeners() {
   });
   
   // Like button
-  likeButton.addEventListener('click', () => {
-    likeButton.classList.toggle('liked');
-    if (likeButton.classList.contains('liked')) {
-      likeButton.innerHTML = '<i class="fas fa-heart"></i> Liked!';
-    } else {
+likeButton.addEventListener('click', async () => {
+  if (!currentUser) {
+    showAuthModal();
+    return;
+  }
+
+  if (!currentStoryId) {
+    console.error("No story selected");
+    return;
+  }
+
+  const isLiked = likeButton.classList.contains('liked');
+  
+  try {
+    if (isLiked) {
+      await unlikeStory(currentStoryId, currentUser.uid);
+      likeButton.classList.remove('liked');
       likeButton.innerHTML = '<i class="fas fa-heart"></i>';
+    } else {
+      await likeStory(currentStoryId, currentUser.uid);
+      likeButton.classList.add('liked');
+      likeButton.innerHTML = '<i class="fas fa-heart"></i> Liked!';
     }
-  });
+  } catch (error) {
+    console.error("Like error:", error);
+  }
+});
+
+// Firestore functions
+async function likeStory(storyId, userId) {
+  const userRef = doc(db, "users", userId);
+  const storyRef = doc(db, "stories", storyId);
+  
+  // Update user's liked stories
+  await updateDoc(userRef, {
+    likedStories: arrayUnion(storyId),
+    lastLiked: new Date()
+  }, { merge: true });
+  
+  // Update story's like count
+  await updateDoc(storyRef, {
+    likes: increment(1),
+    likedBy: arrayUnion(userId)
+  }, { merge: true });
+}
+
+async function unlikeStory(storyId, userId) {
+  const userRef = doc(db, "users", userId);
+  const storyRef = doc(db, "stories", storyId);
+  
+  // Remove from user's liked stories
+  await updateDoc(userRef, {
+    likedStories: arrayRemove(storyId)
+  }, { merge: true });
+  
+  // Update story's like count
+  await updateDoc(storyRef, {
+    likes: increment(-1),
+    likedBy: arrayRemove(userId)
+  }, { merge: true });
+    }
+
+  //-------------–-------------_-----------_----
 
   // Chapter header scroll effect
 window.addEventListener('scroll', () => {
