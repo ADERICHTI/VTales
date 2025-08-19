@@ -1,4 +1,4 @@
-here# **VTales Story Platform - Development Summary**  
+**VTales Story Platform - Development Summary**  
 
 ## **1. Overview**  
 **VTales** is a web-based storytelling platform where users can:  
