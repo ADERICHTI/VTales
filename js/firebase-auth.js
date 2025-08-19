@@ -46,6 +46,7 @@ const profileCircle = document.querySelector('.profile-circle');
 
 // Auth State Management
 onAuthStateChanged(auth, (user) => {
+  currentUser = user;
   if (user) {
     // User signed in
     setupUserProfile(user);
