@@ -818,6 +818,20 @@ footer {
   text-decoration: underline;
 }
 
+.logline-container {
+  position: relative;
+}
+
+.logline-container.collapsed::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(251, 248, 247, 0), var(--paper) 80%);
+}
+
 @media (max-width: 768px) {
   .header-actions {
     flex-direction: column;
