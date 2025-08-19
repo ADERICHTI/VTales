@@ -29,6 +29,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
+
+// Global variables
+let currentUser = null;
+let currentStoryId = null;
 
 // DOM Elements
 const authModal = document.getElementById('auth-modal');
