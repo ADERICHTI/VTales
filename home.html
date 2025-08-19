@@ -135,10 +135,38 @@
     </div>
   </div>
 
+  <!-- Firebase Auth Modal -->
+<div id="auth-modal" class="auth-modal">
+  <div class="auth-modal-content paper-layer">
+    <button class="close-auth-modal">&times;</button>
+    <h3>Welcome to VTales</h3>
+    <p>Sign in to save your reading progress and favorites</p>
+    <button id="google-signin-btn" class="btn google-btn">
+      <i class="fab fa-google"></i> Continue with Google
+    </button>
+  </div>
+</div>
+
+<!-- User Profile Widget -->
+<div id="user-widget" class="user-widget">
+  <div class="user-widget-content">
+    <img id="user-avatar" class="user-avatar" src="" alt="User">
+    <div class="user-details">
+      <span id="user-name"></span>
+      <button id="sign-out-btn" class="btn sign-out-btn">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module" src="/js/firebase-auth.js"></script>
+
   <!-- Story Database -->
-  <script src="story-db.js"></script>
-  <script src="main-db.js"></script>
+  <script src="/js/story-db.js"></script>
+  <script src="/js/main-db.js"></script>
   <!-- Main JavaScript -->
-  <script src="script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
