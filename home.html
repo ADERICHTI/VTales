@@ -135,6 +135,31 @@
     </div>
   </div>
 
+  <!-- Auth Modal -->
+<div id="auth-modal" class="auth-modal">
+  <div class="auth-card paper-layer">
+    <h3>Sign In Required</h3>
+    <p>Please sign in to continue reading</p>
+    <button id="google-signin-btn" class="btn google-btn">
+      <i class="fab fa-google"></i> Sign in with Google
+    </button>
+  </div>
+</div>
+
+<!-- User Profile Widget -->
+<div id="user-widget" class="user-widget">
+  <div class="profile-circle">
+    <img id="user-avatar" class="profile-avatar" alt="User">
+  </div>
+  <div class="profile-details">
+    <span id="user-name"></span>
+    <button id="sign-out-btn" class="btn sign-out-btn">
+      Sign Out
+    </button>
+  </div>
+</div>
+
+  <script src="js/firebase-auth.js"></script>
   <!-- Story Database -->
   <script src="js/story-db.js"></script>
   <script src="js/main-db.js"></script>
