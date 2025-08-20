@@ -34,6 +34,7 @@ const db = getFirestore(app);
 // Global variables
 let currentUser = null;
 let currentStoryId = null;
+let authInitialized = false;
 
 // DOM Elements
 const authModal = document.getElementById('auth-modal');
@@ -47,10 +48,16 @@ const profileCircle = document.querySelector('.profile-circle');
 // Auth State Management
 onAuthStateChanged(auth, (user) => {
   currentUser = user;
+  authInitialized = true;
+  
   if (user) {
     // User signed in
     setupUserProfile(user);
     hideAuthModal();
+
+    if (currentStoryId) {
+      checkIfLiked(currentStoryId);
+    }
   } else {
     // User signed out
     hideUserProfile();
