@@ -1,5 +1,5 @@
 // Import the auth module
-// import './firebase-auth.js';
+import {currentUser} from './firebase-auth.js';
 
 // DOM Elements
 const contentArea = document.getElementById('content-area');
