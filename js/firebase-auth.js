@@ -90,8 +90,7 @@ document.addEventListener('click', (e) => {
 
 // Functions
 function setupUserProfile(user) {
-  userAvatar.src = user.photoURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&';
-  userName.textContent = user.displayName || 'User';
+  userAvatar.src = user.photoURL || 'https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/images.png';
   userWidget.style.display = 'block';
 }
 
