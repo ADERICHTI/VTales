@@ -1,5 +1,15 @@
 // Import the auth module
 // import {currentUser} from './firebase-auth.js';
+import { 
+  getFirestore, 
+  doc, 
+  updateDoc, 
+  arrayUnion, 
+  arrayRemove,
+  increment 
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const db = getFirestore(app);
 
 // DOM Elements
 const contentArea = document.getElementById('content-area');
