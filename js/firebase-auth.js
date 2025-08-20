@@ -32,7 +32,7 @@ const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
 // Global variables
-let currentUser = null;
+export let currentUser = null;
 let currentStoryId = null;
 
 // DOM Elements
