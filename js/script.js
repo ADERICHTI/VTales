@@ -1,5 +1,5 @@
 // Import the auth module
-import {currentUser} from './firebase-auth.js';
+// import {currentUser} from './firebase-auth.js';
 
 // DOM Elements
 const contentArea = document.getElementById('content-area');
@@ -93,9 +93,9 @@ function showStory(storyTitle) {
   });  
 
   async function checkIfLiked(storyId) {
-  if (!currentUser) return;
+  if (!window.currentUser) return;
   
-  const userRef = doc(db, "users", currentUser.uid);
+  const userRef = doc(db, "users", window.currentUser.uid);
   const userDoc = await getDoc(userRef);
   
   if (userDoc.exists()) {
