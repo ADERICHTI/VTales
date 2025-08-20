@@ -36,7 +36,8 @@ window.currentUser = null;
 window.currentStoryId = null;
 
 // DOM Elements
-const authModal = document.getElementById('auth-modal'window.currentStoryIdBtn = document.getElementById('google-signin-btn');
+const authModal = document.getElementById('auth-modal');
+const googleSignInBtn = document.getElementById('google-signin-btn');
 const userWidget = document.getElementById('user-widget');
 const userAvatar = document.getElementById('user-avatar');
 const userName = document.getElementById('user-name');
