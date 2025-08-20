@@ -6,14 +6,7 @@ import {
   onAuthStateChanged,
   signOut 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { 
-  getFirestore, 
-  doc, 
-  updateDoc, 
-  arrayUnion, 
-  arrayRemove,
-  increment 
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyC1iB1X-qqbfB9hwHnZ8SyLWn_i1SU29iI",
@@ -29,7 +22,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-const db = getFirestore(app);
 
 // Global variables
 window.currentUser = null;
