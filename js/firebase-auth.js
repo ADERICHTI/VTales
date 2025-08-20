@@ -32,12 +32,11 @@ const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
 // Global variables
-export let currentUser = null;
-let currentStoryId = null;
+window.currentUser = null;
+window.currentStoryId = null;
 
 // DOM Elements
-const authModal = document.getElementById('auth-modal');
-const googleSignInBtn = document.getElementById('google-signin-btn');
+const authModal = document.getElementById('auth-modal'window.currentStoryIdBtn = document.getElementById('google-signin-btn');
 const userWidget = document.getElementById('user-widget');
 const userAvatar = document.getElementById('user-avatar');
 const userName = document.getElementById('user-name');
@@ -46,7 +45,7 @@ const profileCircle = document.querySelector('.profile-circle');
 
 // Auth State Management
 onAuthStateChanged(auth, (user) => {
-  currentUser = user;
+  window.currentUser = user;
   if (user) {
     // User signed in
     setupUserProfile(user);
