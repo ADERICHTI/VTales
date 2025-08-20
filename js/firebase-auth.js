@@ -91,6 +91,7 @@ document.addEventListener('click', (e) => {
 // Functions
 function setupUserProfile(user) {
   userAvatar.src = user.photoURL || 'https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/images.png';
+  userName.textContent = user.displayName || 'User';
   userWidget.style.display = 'block';
 }
 
