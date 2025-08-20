@@ -9,7 +9,7 @@ import {
   increment 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const db = getFirestore(app);
+const db = getFirestore(window.app);
 
 // DOM Elements
 const contentArea = document.getElementById('content-area');
