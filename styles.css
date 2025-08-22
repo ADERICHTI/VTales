@@ -321,6 +321,7 @@ main {
 .chapter-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  padding-top: 70px;
 }
 
 .read-chapter-btn {
@@ -771,6 +772,10 @@ footer {
   .story-cards {
     grid-template-columns: 1fr;
   }
+
+  .chapter-title {
+    padding-top: initial;
+  }
   
   .chapter-content {
     padding: 1.5rem;
@@ -841,6 +846,10 @@ footer {
   
   .logline-container {
     max-width: 100%;
+  }
+
+  .chapter-title {
+    padding-top: initial;
   }
   }
 
@@ -940,4 +949,8 @@ footer {
   color: white;
   width: 100%;
   margin-top: 0.5rem;
+  }
+
+.chapter-title {
+    padding-top: 70px;
   }
