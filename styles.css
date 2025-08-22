@@ -774,7 +774,7 @@ footer {
   }
 
   .chapter-title {
-    padding-top: initial;
+    padding-top: 0;
   }
   
   .chapter-content {
@@ -849,7 +849,7 @@ footer {
   }
 
   .chapter-title {
-    padding-top: initial;
+    padding-top: 0;
   }
   }
 
