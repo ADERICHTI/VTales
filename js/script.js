@@ -81,6 +81,7 @@ function renderStoryCards() {
 
 // Show a specific story with all its chapters
 function showStory(storyTitle) {
+  changePageTitle(storyTitle);
   currentStory = stories[storyTitle];
   currentStoryId = storyTitle.toLowerCase().replace(/\s+/g, '-');
   
@@ -171,6 +172,7 @@ function showStory(storyTitle) {
 
 // Show a specific chapter of a story
 function showChapter(storyTitle, chapterIndex) {
+  changePageTitle(`${storyTitle} | ${`Chapter ${story.chapters[chapterIndex].number}: ${story.chapters[chapterIndex].title}`}`)
   const story = stories[storyTitle];
   const chapter = story.chapters[chapterIndex];
   
