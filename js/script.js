@@ -13,6 +13,7 @@ import {
 const db = getFirestore(window.app);
 
 // DOM Elements
+const pageTitle = document.querySelector('title');
 const contentArea = document.getElementById('content-area');
 const homeSection = document.getElementById('home-section');
 const storySection = document.getElementById('story-section');
@@ -45,6 +46,10 @@ function init() {
   setupEventListeners();
   animateInkStrokes();
   updateHeroBackground();
+}
+
+function changePageTitle(title) {
+  pageTitle.textContent = `VTales | ${title.toUpperCase()}`
 }
 
 // Render all story cards on the home page
@@ -103,24 +108,24 @@ function showStory(storyTitle) {
     }
   });  
 
-  async function checkIfLiked(storyId) {
-  if (!window.currentUser) return;
+  // async function checkIfLiked(storyId) {
+  // if (!window.currentUser) return;
   
-  const userRef = doc(db, "users", window.currentUser.uid);
-  const userDoc = await getDoc(userRef);
+  // const userRef = doc(db, "users", window.currentUser.uid);
+  // const userDoc = await getDoc(userRef);
   
-  if (userDoc.exists()) {
-    const userData = userDoc.data();
-    const isLiked = userData.likedStories?.includes(storyId);
+  // if (userDoc.exists()) {
+  //   const userData = userDoc.data();
+  //   const isLiked = userData.likedStories?.includes(storyId);
     
-    if (isLiked) {
-      likeButton.classList.add('liked');
-      likeButton.innerHTML = '<i class="fas fa-heart"></i> Liked!';
-    }
-  }
-  }
+  //   if (isLiked) {
+  //     likeButton.classList.add('liked');
+  //     likeButton.innerHTML = '<i class="fas fa-heart"></i> Liked!';
+  //   }
+  // }
+  // }
 
-  // --+----------_--------66666------
+
   
   // Render the latest chapter
   if (currentStory.chapters.length > 0) {
