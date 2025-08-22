@@ -449,8 +449,8 @@ function hashCode(str) {
     // Return predefined color if genre matches exactly
     if (genreColors[normalizedGenre]) {
         let lightValue = genreColors[normalizedGenre][2];
-        let colorData = genreColors[normalizedGenre].push(lightValue < 41 ? '#fff' : '#333' );
-        alert(colorData);
+        let colorData = genreColors[normalizedGenre].push(lightValue < 40 ? '#fff' : '#333' );
+        alert(colorData, genreColors[normalizedGenre]);
         return genreColors[normalizedGenre];
     }
     
