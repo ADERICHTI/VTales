@@ -450,7 +450,7 @@ function hashCode(str) {
     if (genreColors[normalizedGenre]) {
         let lightValue = genreColors[normalizedGenre][2];
         //colorData = genreColors[normalizedGenre].push(genreColors[normalizedGenre][2] <= 40 ? '#fff' : '#333');
-        alert(lightValue <= 40 ? '#fff' : '#333 );
+        alert(lightValue < 41 ? '#fff' : '#333' );
         return genreColors[normalizedGenre];
     }
     
