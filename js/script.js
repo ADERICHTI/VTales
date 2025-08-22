@@ -457,7 +457,7 @@ function hashCode(str) {
     // Try to find the most relevant genre match
     for (const genre of genres) {
         if (genreColors[genre] && genre.length > 2) { // Only consider meaningful words
-            return genreColors[genre]).push("#fff5e7");
+            return genreColors[genre].push("#fff5e7");
         }
     }
     
