@@ -61,12 +61,12 @@ function renderStoryCards() {
     storyCard.className = 'story-card paper-layer';
     
     // Generate a unique color for each story card based on title hash
-    const hue = hashCode(title) % 360;
-    const color = `hsl(${hue}, 60%, 85%)`;
+    const hue = hashCode(title);
+    const color = `hsl(${hue[0]}, 60%, 85%)`;
     const darkColor = `hsl(${hue}, 60%, 70%)`;
     
     storyCard.innerHTML = `
-      <div class="story-card-image" style="background-image: linear-gradient(hsl(${hue}, 60%, 85%, 30%), ${color}), url('https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png');"></div>
+      <div class="story-card-image" style="background-image: linear-gradient(hsl(${hue}, 60%, 85%, 30%), hsl(${hue[0]}, 60%, 85%, 66%)), url('https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png');"></div>
       <div class="story-card-content" style="background-color: ${color};">
         <h3 class="story-card-title">${title}</h3>
         <p class="story-card-description">${storyData.logline}</p>
@@ -411,13 +411,61 @@ window.addEventListener('scroll', () => {
 }
 
 // Helper function to generate a hash code from a string
+// function hashCode(str) {
+//   let hash = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     hash = str.charCodeAt(i) + ((hash << 5) - hash);
+//   }
+//   return hash;
+// }
+
 function hashCode(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  return hash;
+    // Common genres with predefined HSL colors
+    const genreColors = {
+        'fantasy': 'hsl(270, 70%, 60%)',      // Magical purple - mystical and dreamy
+        'sci-fi': 'hsl(210, 80%, 55%)',       // Futuristic blue - technology and space
+        'horror': 'hsl(0, 75%, 35%)',         // Blood red - danger and fear
+        'romance': 'hsl(330, 75%, 65%)',      // Romantic pink - love and passion
+        'adventure': 'hsl(120, 65%, 45%)',    // Forest green - exploration and nature
+        'sci-fi horror': 'hsl(280, 70%, 40%)', // Cosmic purple - eerie and technological
+        'sci-fi adventure': 'hsl(180, 70%, 45%)', // Teal - exploration and futurism
+        'fantasy adventure': 'hsl(150, 65%, 50%)', // Emerald - magical exploration
+        'fantasy adventure sci-fi': 'hsl(225, 70%, 55%)', // Royal blue - epic crossover
+        'comedy': 'hsl(50, 85%, 60%)'         // Sunny yellow - bright and cheerful
+    };
+    
+    // Convert to lowercase and trim for case-insensitive matching
+    const normalizedGenre = str.toLowerCase().trim();
+    
+    // Return predefined color if genre matches exactly
+    if (genreColors[normalizedGenre]) {
+        return genreColors[normalizedGenre];
+    }
+    
+    // Check for partial matches with priority to more specific genres
+    const genres = normalizedGenre.split(/\s+/);
+    
+    // Try to find the most relevant genre match
+    for (const genre of genres) {
+        if (genreColors[genre] && genre.length > 2) { // Only consider meaningful words
+            return genreColors[genre];
+        }
+    }
+    
+    // Fallback: Generate a consistent color from hash for unknown genres
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    
+    // Generate pleasant HSL color
+    const hue = Math.abs(hash % 360);
+    const saturation = 65 + (Math.abs(hash) % 20); // 65-85%
+    const lightness = 45 + (Math.abs(hash) % 15);  // 45-60%
+    
+    return [hue, saturation, lightness];
 }
+
 
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
