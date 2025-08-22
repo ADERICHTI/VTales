@@ -70,6 +70,7 @@ function renderStoryCards() {
     
     // Generate a unique color for each story card based on title hash
     const hslCode = hashCode(storyData.genre);
+    console.log(hslCode);
     const color = `hsl(${hslCode[0]}, ${hslCode[1]}%, ${hslCode[2]}%)`;
     const darkColor = `hsl(${hslCode}, ${hslCode[1]}%, 70%)`;
     
