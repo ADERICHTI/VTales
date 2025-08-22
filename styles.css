@@ -321,7 +321,6 @@ main {
 .chapter-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  padding-top: 70px;
 }
 
 .read-chapter-btn {
@@ -773,9 +772,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .chapter-title {
-    padding-top: 0;
-  }
+
   
   .chapter-content {
     padding: 1.5rem;
@@ -838,6 +835,13 @@ footer {
   background: linear-gradient(to right, rgba(251, 248, 247, 0), var(--paper) 80%);
 }
 
+@media (min-width: 1280px) {
+  .chapter-title {
+    line-height: 1;
+    margin: 0;
+  }
+}
+  
 @media (max-width: 768px) {
   .header-actions {
     flex-direction: column;
@@ -848,9 +852,7 @@ footer {
     max-width: 100%;
   }
 
-  .chapter-title {
-    padding-top: 0;
-  }
+
   }
 
 
@@ -951,6 +953,3 @@ footer {
   margin-top: 0.5rem;
   }
 
-.chapter-title {
-    padding-top: 70px;
-  }
