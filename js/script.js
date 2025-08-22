@@ -447,7 +447,7 @@ function hashCode(str) {
     
     // Return predefined color if genre matches exactly
     if (genreColors[normalizedGenre]) {
-        return genreColors[normalizedGenre].push(genreColors[normalizedGenre][2] <= 40 ? "#fff5e7" : "#3a3226");
+        return genreColors[normalizedGenre].push((genreColors[normalizedGenre][2] <= 40) ? "#fff5e7" : "#3a3226");
     }
     
     // Check for partial matches with priority to more specific genres
@@ -456,7 +456,7 @@ function hashCode(str) {
     // Try to find the most relevant genre match
     for (const genre of genres) {
         if (genreColors[genre] && genre.length > 2) { // Only consider meaningful words
-            return genreColors[genre].push(genreColors[genre][2] <= 40 ? "#fff5e7" : "#3a3226");
+            return genreColors[genre].push((genreColors[genre][2] <= 40) ? "#fff5e7" : "#3a3226");
         }
     }
     
@@ -471,7 +471,7 @@ function hashCode(str) {
     const saturation = 65 + (Math.abs(hash) % 20); // 65-85%
     const lightness = 45 + (Math.abs(hash) % 15);  // 45-60%
     
-    return [hue, saturation, lightness, lightness <= 40 ? "#fff5e7" : "#3a3226"];
+    return [hue, saturation, lightness, (lightness <= 40) ? "#fff5e7" : "#3a3226"];
 }
 
 
