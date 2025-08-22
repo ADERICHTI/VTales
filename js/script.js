@@ -172,7 +172,7 @@ function showStory(storyTitle) {
 
 // Show a specific chapter of a story
 function showChapter(storyTitle, chapterIndex) {
-  changePageTitle(`${storyTitle} | ${`Chapter ${story.chapters[chapterIndex].number}: ${story.chapters[chapterIndex].title}`}`)
+  changePageTitle(`${storyTitle} | ${`Chapter ${stories[storyTitle].chapters[chapterIndex].number}: ${stories[storyTitle].chapters[chapterIndex].title}`}`)
   const story = stories[storyTitle];
   const chapter = story.chapters[chapterIndex];
   
