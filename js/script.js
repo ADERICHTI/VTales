@@ -273,7 +273,7 @@ function setupEventListeners() {
   });
   
   // Like button
-likeButton.addEventListener('click', async () => {
+// likeButton.addEventListener('click', async () => {
   // Opens dialog when clicked ( Changes will be made later )
   likeButton.addEventListener('click', () => {
     dialogOverlay.classList.add('active');
@@ -304,7 +304,7 @@ likeButton.addEventListener('click', async () => {
   // } catch (error) {
   //   console.error("Like error:", error);
   // }
-});
+// });
 
 // Firestore functions
 // async function likeStory(storyId, userId) {
