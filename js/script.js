@@ -66,7 +66,7 @@ function renderStoryCards() {
     const darkColor = `hsl(${hue}, 60%, 70%)`;
     
     storyCard.innerHTML = `
-      <div class="story-card-image" style="background-color: ${color};"></div>
+      <div class="story-card-image" style="background-image: ${color}, url('https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png');"></div>
       <div class="story-card-content" style="background-color: ${color};">
         <h3 class="story-card-title">${title}</h3>
         <p class="story-card-description">${storyData.logline}</p>
