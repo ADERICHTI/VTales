@@ -274,66 +274,71 @@ function setupEventListeners() {
   
   // Like button
 likeButton.addEventListener('click', async () => {
-  if (!currentUser) {
-    showAuthModal();
-    return;
-  }
+  // Opens dialog when clicked ( Changes will be made later )
+  likeButton.addEventListener('click', () => {
+    dialogOverlay.classList.add('active');
+  });
+  // if (!currentUser) {
+  //   showAuthModal();
+  //   return;
+  // }
 
-  if (!currentStoryId) {
-    console.error("No story selected");
-    return;
-  }
+  // if (!currentStoryId) {
+  //   console.error("No story selected");
+  //   return;
+  // }
 
-  const isLiked = likeButton.classList.contains('liked');
+  // const isLiked = likeButton.classList.contains('liked');
+
   
-  try {
-    if (isLiked) {
-      await unlikeStory(currentStoryId, currentUser.uid);
-      likeButton.classList.remove('liked');
-      likeButton.innerHTML = '<i class="fas fa-heart"></i>';
-    } else {
-      await likeStory(currentStoryId, currentUser.uid);
-      likeButton.classList.add('liked');
-      likeButton.innerHTML = '<i class="fas fa-heart"></i> Liked!';
-    }
-  } catch (error) {
-    console.error("Like error:", error);
-  }
+  // try {
+  //   if (isLiked) {
+  //     await unlikeStory(currentStoryId, currentUser.uid);
+  //     likeButton.classList.remove('liked');
+  //     likeButton.innerHTML = '<i class="fas fa-heart"></i>';
+  //   } else {
+  //     await likeStory(currentStoryId, currentUser.uid);
+  //     likeButton.classList.add('liked');
+  //     likeButton.innerHTML = '<i class="fas fa-heart"></i> Liked!';
+  //   }
+  // } catch (error) {
+  //   console.error("Like error:", error);
+  // }
 });
 
 // Firestore functions
-async function likeStory(storyId, userId) {
-  const userRef = doc(db, "users", userId);
-  const storyRef = doc(db, "stories", storyId);
+// async function likeStory(storyId, userId) {
+//   const userRef = doc(db, "users", userId);
+//   const storyRef = doc(db, "stories", storyId);
   
-  // Update user's liked stories
-  await updateDoc(userRef, {
-    likedStories: arrayUnion(storyId),
-    lastLiked: new Date()
-  }, { merge: true });
+//   // Update user's liked stories
+//   await updateDoc(userRef, {
+//     likedStories: arrayUnion(storyId),
+//     lastLiked: new Date()
+//   }, { merge: true });
   
-  // Update story's like count
-  await updateDoc(storyRef, {
-    likes: increment(1),
-    likedBy: arrayUnion(userId)
-  }, { merge: true });
-}
+//   // Update story's like count
+//   await updateDoc(storyRef, {
+//     likes: increment(1),
+//     likedBy: arrayUnion(userId)
+//   }, { merge: true });
+// }
 
-async function unlikeStory(storyId, userId) {
-  const userRef = doc(db, "users", userId);
-  const storyRef = doc(db, "stories", storyId);
+// async function unlikeStory(storyId, userId) {
+//   const userRef = doc(db, "users", userId);
+//   const storyRef = doc(db, "stories", storyId);
   
-  // Remove from user's liked stories
-  await updateDoc(userRef, {
-    likedStories: arrayRemove(storyId)
-  }, { merge: true });
+//   // Remove from user's liked stories
+//   await updateDoc(userRef, {
+//     likedStories: arrayRemove(storyId)
+//   }, { merge: true });
   
-  // Update story's like count
-  await updateDoc(storyRef, {
-    likes: increment(-1),
-    likedBy: arrayRemove(userId)
-  }, { merge: true });
-    }
+//   // Update story's like count
+//   await updateDoc(storyRef, {
+//     likes: increment(-1),
+//     likedBy: arrayRemove(userId)
+//   }, { merge: true });
+//     }
 
   //-------------–-------------_-----------_----
 
