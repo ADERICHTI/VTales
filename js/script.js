@@ -86,7 +86,7 @@ function showStory(storyTitle) {
   currentStoryId = storyTitle.toLowerCase().replace(/\s+/g, '-');
   
   // Check if user already liked this story
-  checkIfLiked(currentStoryId);
+  // checkIfLiked(currentStoryId);
   
   // Update the story view title
   storyViewTitle.textContent = storyTitle;
