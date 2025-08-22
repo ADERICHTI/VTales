@@ -52,6 +52,14 @@ function changePageTitle(title) {
   pageTitle.textContent = `VTales | ${title.toUpperCase()}`
 }
 
+function toTitleCase(str) {
+  return str
+  .toLowerCase()
+  .split('')
+  .map(word => word.charAt(0).toUppercase() + word.slice(1))
+  .join('');
+}
+
 // Render all story cards on the home page
 function renderStoryCards() {
   storyCardsContainer.innerHTML = '';
@@ -61,7 +69,7 @@ function renderStoryCards() {
     storyCard.className = 'story-card paper-layer';
     
     // Generate a unique color for each story card based on title hash
-    const hue = hashCode(title);
+    const hue = hashCode(storyData.genre);
     const color = `hsl(${hue[0]}, 60%, 85%)`;
     const darkColor = `hsl(${hue}, 60%, 70%)`;
     
