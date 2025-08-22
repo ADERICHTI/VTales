@@ -695,6 +695,7 @@ footer {
   
   .scroll-top-btn {
     bottom: 6rem;
+    margin-bottom: 20px;
   }
   
   .scroll-bottom-btn {
