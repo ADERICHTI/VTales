@@ -69,12 +69,12 @@ function renderStoryCards() {
     storyCard.className = 'story-card paper-layer';
     
     // Generate a unique color for each story card based on title hash
-    const hue = hashCode(storyData.genre);
-    const color = `hsl(${hue[0]}, 60%, 85%)`;
-    const darkColor = `hsl(${hue}, 60%, 70%)`;
+    const hslCode = hashCode(storyData.genre);
+    const color = `hsl(${hslCode[0]}, ${hslCode[1]}%, ${hslCode[2]}%)`;
+    const darkColor = `hsl(${hslCode}, ${hslCode[1]}%, 70%)`;
     
     storyCard.innerHTML = `
-      <div class="story-card-image" style="background-image: linear-gradient(hsl(${hue[0]}, 60%, 85%, 30%), hsl(${hue[0]}, 60%, 85%, 66%)), url('https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png');"></div>
+      <div class="story-card-image" style="background-image: linear-gradient(hsl(${hslCode[0]}, ${hslCode[1]}%, ${hslCode[2]}%, 30%), hsl(${hslCode[0]}, ${hslCode[1]}%, ${hslCode[2]}%, 66%)), url('https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png');"></div>
       <div class="story-card-content" style="background-color: ${color};">
         <h3 class="story-card-title">${title}</h3>
         <p class="story-card-description">${storyData.logline}</p>
@@ -430,16 +430,16 @@ window.addEventListener('scroll', () => {
 function hashCode(str) {
     // Common genres with predefined HSL colors
     const genreColors = {
-        'fantasy': 'hsl(270, 70%, 60%)',      // Magical purple - mystical and dreamy
-        'sci-fi': 'hsl(210, 80%, 55%)',       // Futuristic blue - technology and space
-        'horror': 'hsl(0, 75%, 35%)',         // Blood red - danger and fear
-        'romance': 'hsl(330, 75%, 65%)',      // Romantic pink - love and passion
-        'adventure': 'hsl(120, 65%, 45%)',    // Forest green - exploration and nature
-        'sci-fi horror': 'hsl(280, 70%, 40%)', // Cosmic purple - eerie and technological
-        'sci-fi adventure': 'hsl(180, 70%, 45%)', // Teal - exploration and futurism
-        'fantasy adventure': 'hsl(150, 65%, 50%)', // Emerald - magical exploration
-        'fantasy adventure sci-fi': 'hsl(225, 70%, 55%)', // Royal blue - epic crossover
-        'comedy': 'hsl(50, 85%, 60%)'         // Sunny yellow - bright and cheerful
+        'fantasy': [270, 70, 60],      // Magical purple - mystical and dreamy
+        'sci-fi': [210, 80, 55],       // Futuristic blue - technology and space
+        'horror': [0, 75, 35],         // Blood red - danger and fear
+        'romance': [330, 75, 65],      // Romantic pink - love and passion
+        'adventure': [120, 65, 45],    // Forest green - exploration and nature
+        'sci-fi horror': [280, 70, 40], // Cosmic purple - eerie and technological
+        'sci-fi adventure': [180, 70, 45], // Teal - exploration and futurism
+        'fantasy adventure': [150, 65, 50], // Emerald - magical exploration
+        'fantasy adventure sci-fi': [225, 70, 55], // Royal blue - epic crossover
+        'comedy': [50, 85, 60]         // Sunny yellow - bright and cheerful
     };
     
     // Convert to lowercase and trim for case-insensitive matching
