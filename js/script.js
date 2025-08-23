@@ -49,7 +49,7 @@ function init() {
 }
 
 function changePageTitle(title) {
-  pageTitle.textContent = `VTales | ${title.toUpperCase()}`
+  pageTitle.textContent = `Richard Series | ${title.toUpperCase()}`
 }
 
 function toTitleCase(str) {
