@@ -3,25 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Essential Open Graph Meta Tags -->
-    <meta property="og:title" content="VTales - Immerse Yourself in Captivating Stories">
-    <meta property="og:description" content="Discover enchanting worlds, thrilling adventures, and heartfelt romances. Read, like, and comment on beautifully crafted stories that transport you to another realm.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="VTales">
-
-    <!-- Twitter Card Meta Tags 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VTales - Where Stories Come to Life">
-    <meta name="twitter:description" content="Dive into captivating tales across fantasy, romance, adventure, and mystery. Your next literary adventure awaits!">
-    <meta name="twitter:image" content="https://yourwebsite.com/images/vtales-twitter-preview.jpg">
-    <meta name="twitter:site" content="@VTalesStories">-->
-
-    <!-- Traditional meta tags -->
-    <meta name="title" content="VTales - Immerse Yourself in Captivating Stories">
+    <meta name="title" content="Richard Series - Immerse Yourself in Captivating Stories">
     <meta name="description" content="Discover enchanting worlds, thrilling adventures, and heartfelt romances. Read, like, and comment on beautifully crafted stories.">
     <meta name="keywords" content="stories, reading, fantasy, romance, adventure, mystery, fiction, chapters, storytelling">
       <link rel="image_src" href="https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png">
@@ -30,14 +12,14 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "VTales",
-      "url": "https://yourwebsite.com/",
+      "name": "Richard Series",
+      "url": "https://richardseries.netlify.app/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://yourwebsite.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
+        "target": "https://richardseries.netlify.app",
+        "query-input": "required name=Mech Hunter"
       },
-      "image": "https://yourwebsite.com/images/vtales-schema.jpg"
+      "image": "https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/VTales%20image.png"
     }
     </script>
     
@@ -62,7 +44,7 @@
             "@type": "ReadAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "vtales.netlify.app",
+              "urlTemplate": "richardseries.netlify.app",
               "actionPlatform": [
                 "http://schema.org/DesktopWebPlatform",
                 "http://schema.org/MobileWebPlatform"
@@ -77,11 +59,8 @@
         }
       ]
     }
-        <!-- This will be updated by JavaScript -->
-    <meta id="og-title" property="og:title" content="">
-    <meta id="og-description" property="og:description" content="">
-    <meta id="og-image" property="og:image" content="">
-  <title>VTales | Home</title>
+  
+  <title>Richard Series | Home</title>
   <link rel="icon" href="https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/VTales%20icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Unna:wght@400;700&display=swap" rel="stylesheet">
@@ -91,7 +70,7 @@
   <!-- Header -->
   <header class="paper-layer">
     <div class="header-content">
-      <h1 class="logo">VTales</h1>
+      <h1 class="logo">Richard Series</h1>
       <nav>
         <ul>
           <li><a href="#" class="active" data-section="home">Home</a></li>
@@ -244,28 +223,5 @@
   <script src="js/main-db.js"></script>
   <!-- Main JavaScript -->
   <script type='module' src="js/script.js"></script>
-   <script>
-        // Update meta tags with latest story info
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the latest story from your data
-            const latestStory = getLatestStory(); // Your function to get the latest story
-            
-            if (latestStory) {
-                document.getElementById('og-title').content = `VTales - ${latestStory.title}`;
-                document.getElementById('og-description').content = latestStory.logline;
-                document.getElementById('og-image').content = latestStory.imageUrl;
-            }
-        });
-        
-        // Example function - replace with your actual data retrieval
-        function getLatestStory() {
-            // This would typically come from an API or your database
-            return {
-                title: "The Lost Kingdom",
-                logline: "A watercolor journey through forgotten ruins where magic still lingers in the ancient stones.",
-                imageUrl: "https://raw.githubusercontent.com/ADERICHTI/Images001/refs/heads/main/Mech%20Hunter.png"
-            };
-        }
-  </script>
 </body>
   </html>
