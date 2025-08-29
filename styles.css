@@ -978,7 +978,7 @@ footer {
 }
 
 .chapters-container .chapter-card-image {
-  height: 90%;
+  height: 60%;
 }
 
 .chapter-card:hover .chapter-card-image {
@@ -1001,13 +1001,13 @@ footer {
   display: flex;
   flex-direction: column;
 }
-
+/* 
 .chapters-container .chapter-card-content {
   position: absolute;
   bottom: 7px;
 /*   width: 100%; */
   background: linear-gradient(to top, #ffffff50, transparent);
-}
+} */
 
 .chapter-card-number {
   font-size: 0.8rem;
