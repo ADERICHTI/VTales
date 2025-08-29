@@ -34,7 +34,6 @@ window.app = app;
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
-const usersCollection = collection(db, "users");
 
 // Global variables
 window.currentUser = null;
@@ -51,7 +50,7 @@ const profileCircle = document.querySelector('.profile-circle');
 
 async function setUser(userid, userData) {
   try {
-    await addDoc(usersCollection, userData);
+    await setDoc(doc(db, "users", userid), userData);
 } catch (error) {
   console.log("Error setting Document: ", error);
 }
@@ -67,8 +66,8 @@ onAuthStateChanged(auth, (user) => {
     setUser(user.email, {
       username: user.displayName,
       userEmail: user.email,
-      signInAt: new Date().toISOString(),
-      lastActive: new Date().toISOString()
+      signInAt: new Date().toString(),
+      lastActive: new Date().toString()
     });
   } else {
     // User signed out
