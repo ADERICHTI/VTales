@@ -34,6 +34,7 @@ window.app = app;
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
+const usersCollection = collection(db, "users");
 
 // Global variables
 window.currentUser = null;
@@ -50,7 +51,7 @@ const profileCircle = document.querySelector('.profile-circle');
 
 async function setUser(userid, userData) {
   try {
-    await setDoc(doc(db, "users", userid), userData);
+    await addDoc(usersCollection, userData);
 } catch (error) {
   console.log("Error setting Document: ", error);
 }
