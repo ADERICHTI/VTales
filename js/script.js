@@ -143,6 +143,7 @@ function showStory(storyTitle) {
     latestChapterInfo.innerHTML = `
       <div class="chapter-number">Chapter ${latestChapter.number}</div>
       <h4 class="chapter-title">${latestChapter.title}</h4>
+      <p class="chapter-card-preview">${getFirstSentence(chapter.story)}</p>
       <button class="read-chapter-btn" data-index="${currentStory.chapters.length - 1}">Read Chapter</button>
     `;
     
@@ -160,8 +161,14 @@ function showStory(storyTitle) {
     const chapterCard = document.createElement('div');
     chapterCard.className = 'chapter-card paper-layer';
     chapterCard.innerHTML = `
-      <div class="chapter-card-number">Chapter ${chapter.number}</div>
-      <h4 class="chapter-card-title">${chapter.title}</h4>
+      <div class="chapter-card-image" 
+           style="background-image: url('${chapter.imageUrl || currentStory.imageUrl}')">
+      </div>
+      <div class="chapter-card-content">
+        <div class="chapter-card-number">Chapter ${chapter.number}</div>
+        <h4 class="chapter-card-title">${chapter.title}</h4>
+        <p class="chapter-card-preview">${getFirstSentence(chapter.story)}</p>
+      </div>
     `;
     chapterCard.addEventListener('click', () => showChapter(storyTitle, index));
     chapterCardsContainer.appendChild(chapterCard);
@@ -177,6 +184,12 @@ function showStory(storyTitle) {
   
   // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Helper function to get first sentence for preview
+function getFirstSentence(text) {
+  const firstSentence = text.split('.')[0] + '.';
+  return firstSentence.length > 100 ? firstSentence.substring(0, 100) + '...' : firstSentence;
 }
 
 // Show a specific chapter of a story
