@@ -140,12 +140,13 @@ function showStory(storyTitle) {
   // Render the latest chapter
   if (currentStory.chapters.length > 0) {
     const latestChapter = currentStory.chapters[currentStory.chapters.length - 1];
+        // <div class="chapter-card-image" 
+        //      style="background-image: url('${latestChapter.imageUrl || currentStory.imageUrl}')"
+        //      data-chapter-number="${latestChapter.number}">
+        // </div>
     latestChapterInfo.innerHTML = `
-      <div class="chapter-card paper-layer">
-        <div class="chapter-card-image" 
-             style="background-image: url('${latestChapter.imageUrl || currentStory.imageUrl}')"
-             data-chapter-number="${latestChapter.number}">
-        </div>
+      <div class="chapter-card paper-layer" style="background: linear-gradient(to top, #aaaaaa20, #aaaaaa40), url('${latestChapter.imageUrl || currentStory.imageUrl}')">
+      
         <div class="chapter-card-content">
           <div class="chapter-card-number">Chapter ${latestChapter.number}</div>
           <h4 class="chapter-card-title">${latestChapter.title}</h4>
