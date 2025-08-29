@@ -1005,9 +1005,8 @@ footer {
 .chapters-container .chapter-card-content {
   position: absolute;
   bottom: 7px;
-  width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  color: white;
+/*   width: 100%; */
+  background: linear-gradient(to top, #ffffff50, transparent);
 }
 
 .chapter-card-number {
