@@ -6,6 +6,16 @@ import {
   onAuthStateChanged,
   signOut 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { 
+  getFirestore, 
+  collection, 
+  addDoc, 
+  onSnapshot, 
+  deleteDoc, 
+  doc, 
+  updateDoc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 
 const firebaseConfig = {
@@ -23,6 +33,7 @@ const app = initializeApp(firebaseConfig);
 window.app = app;
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
 
 // Global variables
 window.currentUser = null;
@@ -37,6 +48,14 @@ const userName = document.getElementById('user-name');
 const signOutBtn = document.getElementById('sign-out-btn');
 const profileCircle = document.querySelector('.profile-circle');
 
+async function setUser(userid, userData) {
+  try {
+    await setDoc(doc(db, "users", userid), userData);
+} catch (error) {
+  console.log("Error setting Document: ", error);
+}
+}
+
 // Auth State Management
 onAuthStateChanged(auth, (user) => {
   window.currentUser = user;
@@ -44,6 +63,12 @@ onAuthStateChanged(auth, (user) => {
     // User signed in
     setupUserProfile(user);
     hideAuthModal();
+    await setUser(user.email, {
+            username: user.displayName,
+            userEmail: user.email,
+            signInAt: new Date().toISOString(),
+            lastActive: new Date().toISOString()
+          });
   } else {
     // User signed out
     hideUserProfile();
