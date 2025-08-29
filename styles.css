@@ -953,3 +953,115 @@ footer {
   margin-top: 0.5rem;
   }
 
+/* Chapter Card with Image */
+.chapter-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 280px; /* Fixed height for consistency */
+}
+
+.chapter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chapter-card-image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.chapter-card:hover .chapter-card-image {
+  transform: scale(1.05);
+}
+
+.chapter-card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+}
+
+.chapter-card-content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-card-number {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.chapter-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+  font-family: 'Unna', serif;
+}
+
+.chapter-card-preview {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+/* Latest Chapter Styling */
+.latest-chapter .chapter-card {
+  height: 320px; /* Slightly larger for emphasis */
+}
+
+.latest-chapter .chapter-card-image {
+  height: 180px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chapter-card {
+    height: 250px;
+  }
+  
+  .chapter-card-image {
+    height: 120px;
+  }
+  
+  .latest-chapter .chapter-card {
+    height: 280px;
+  }
+  
+  .latest-chapter .chapter-card-image {
+    height: 140px;
+  }
+}
+
+/* Fallback for missing images */
+.chapter-card-image:empty::before {
+  content: 'Chapter ' attr(data-chapter-number);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent) 0%, #6b8c42 100%);
+  color: white;
+  font-family: 'Unna', serif;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+}
