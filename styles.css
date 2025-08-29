@@ -977,6 +977,10 @@ footer {
   transition: all 0.3s ease;
 }
 
+.chapter-container .chapter-card-image {
+  height: 90%;
+}
+
 .chapter-card:hover .chapter-card-image {
   transform: scale(1.05);
 }
@@ -996,6 +1000,14 @@ footer {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+
+.chapter-container .chapter-card-content {
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
 }
 
 .chapter-card-number {
