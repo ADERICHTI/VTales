@@ -977,7 +977,7 @@ footer {
   transition: all 0.3s ease;
 }
 
-.chapter-container .chapter-card-image {
+.chapters-container .chapter-card-image {
   height: 90%;
 }
 
@@ -1002,7 +1002,7 @@ footer {
   flex-direction: column;
 }
 
-.chapter-container .chapter-card-content {
+.chapters-container .chapter-card-content {
   position: absolute;
   bottom: 7px;
   width: 100%;
