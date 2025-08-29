@@ -141,17 +141,26 @@ function showStory(storyTitle) {
   if (currentStory.chapters.length > 0) {
     const latestChapter = currentStory.chapters[currentStory.chapters.length - 1];
     latestChapterInfo.innerHTML = `
-      <div class="chapter-number">Chapter ${latestChapter.number}</div>
-      <h4 class="chapter-title">${latestChapter.title}</h4>
-      <p class="chapter-card-preview">${getFirstSentence(chapter.story)}</p>
-      <button class="read-chapter-btn" data-index="${currentStory.chapters.length - 1}">Read Chapter</button>
+      <div class="chapter-card paper-layer">
+        <div class="chapter-card-image" 
+             style="background-image: url('${latestChapter.imageUrl || currentStory.imageUrl}')"
+             data-chapter-number="${latestChapter.number}">
+        </div>
+        <div class="chapter-card-content">
+          <div class="chapter-card-number">Chapter ${latestChapter.number}</div>
+          <h4 class="chapter-card-title">${latestChapter.title}</h4>
+          <p class="chapter-card-preview">${getFirstSentence(latestChapter.story)}</p>
+          <button class="read-chapter-btn" data-index="${currentStory.chapters.length - 1}">
+            Read Chapter
+          </button>
+        </div>
+      </div>
     `;
     
-    // Add event listener to the read chapter button
     latestChapterInfo.querySelector('.read-chapter-btn').addEventListener('click', (e) => {
       showChapter(storyTitle, parseInt(e.target.dataset.index));
     });
-  } else {
+} else {
     latestChapterInfo.innerHTML = '<p>No chapters available yet.</p>';
   }
   
