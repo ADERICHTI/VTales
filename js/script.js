@@ -145,7 +145,7 @@ function showStory(storyTitle) {
         //      data-chapter-number="${latestChapter.number}">
         // </div>
     latestChapterInfo.innerHTML = `
-      <div class="chapter-card paper-layer" style="background: linear-gradient(to top, #ffffff80, #ffffff90), url('${latestChapter.imageUrl || currentStory.imageUrl}'); background-size: cover; background-repeat: no-repeat;">
+      <div class="chapter-card paper-layer" style="background: linear-gradient(to top, #ffffff80, #ffffff99), url('${latestChapter.imageUrl || currentStory.imageUrl}'); background-size: cover; background-repeat: no-repeat;">
       
         <div class="chapter-card-content">
           <div class="chapter-card-number">Chapter ${latestChapter.number}</div>
