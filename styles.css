@@ -1020,6 +1020,7 @@ footer {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: var(--ink);
+  text-shadow: 0 0 10px 10px black;
   font-family: 'Unna', serif;
 }
 
@@ -1041,6 +1042,18 @@ footer {
 
 .latest-chapter .chapter-card-image {
   height: 180px;
+}
+
+.latest-chapter .chapter-card-title {
+  text-shadow: 0 0 10px 10px black;
+}
+
+.latest-chapter .chapter-card-number {
+  text-shadow: 0 0 10px 10px black;
+}
+
+.latest-chapter .chapter-card-preview {
+  text-shadow: 0 0 10px 10px black;
 }
 
 /* Responsive Design */
