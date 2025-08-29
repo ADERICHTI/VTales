@@ -1,4 +1,4 @@
-as a/* === BASE STYLES === */
+/* === BASE STYLES === */
 :root {
   --paper: #fbf8f7;
   --ink: #3a3226;
@@ -1045,15 +1045,15 @@ footer {
 }
 
 .latest-chapter .chapter-card-title {
-  text-shadow: 0 0 20px black;
+  text-shadow: 0 0 10px black;
 }
 
 .latest-chapter .chapter-card-number {
-  text-shadow: 0 0 20px black;
+  text-shadow: 0 0 10px black;
 }
 
 .latest-chapter .chapter-card-preview {
-  text-shadow: 0 0 20px black;
+  text-shadow: 0 0 10px black;
   color: #333;
 }
 
@@ -1089,4 +1089,4 @@ footer {
   font-size: 1.2rem;
   text-align: center;
   padding: 1rem;
-}
+  }
