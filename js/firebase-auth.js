@@ -48,13 +48,13 @@ const userName = document.getElementById('user-name');
 const signOutBtn = document.getElementById('sign-out-btn');
 const profileCircle = document.querySelector('.profile-circle');
 
-async function setUser(userid, userData) {
-  try {
-    await setDoc(doc(db, "users", userid), userData);
-} catch (error) {
-  console.log("Error setting Document: ", error);
-}
-}
+// async function setUser(userid, userData) {
+//   try {
+//     await setDoc(doc(db, "users", userid), userData);
+// } catch (error) {
+//   console.log("Error setting Document: ", error);
+// }
+// }
 
 // Auth State Management
 onAuthStateChanged(auth, (user) => {
@@ -63,12 +63,12 @@ onAuthStateChanged(auth, (user) => {
     // User signed in
     setupUserProfile(user);
     hideAuthModal();
-    await setUser(user.email, {
-            username: user.displayName,
-            userEmail: user.email,
-            signInAt: new Date().toISOString(),
-            lastActive: new Date().toISOString()
-          });
+    // await setUser(user.email, {
+    //         username: user.displayName,
+    //         userEmail: user.email,
+    //         signInAt: new Date().toISOString(),
+    //         lastActive: new Date().toISOString()
+    //       });
   } else {
     // User signed out
     hideUserProfile();
