@@ -1045,15 +1045,15 @@ footer {
 }
 
 .latest-chapter .chapter-card-title {
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 2px black;
 }
 
 .latest-chapter .chapter-card-number {
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 2px black;
 }
 
 .latest-chapter .chapter-card-preview {
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 1px black;
   color: #333;
 }
 
